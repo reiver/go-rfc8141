@@ -4,8 +4,8 @@ import (
 	"github.com/reiver/go-utf8"
 )
 
-// PeekPrefixNID looks to see if `str` begins with a value NID (Namespace Identifier),
-// and if it doesn, then return its length.
+// PeekPrefixNID looks to see if `str` begins with an NID (Namespace Identifier),
+// and if it does, then return its length.
 //
 // IETF RFC-8141 defines an NID (Namespace Identifier) as follows:
 //

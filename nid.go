@@ -4,6 +4,57 @@ import (
 	"github.com/reiver/go-utf8"
 )
 
+// PeekPrefixNID looks to see if `str` begins with a value NID (Namespace Identifier),
+// and if it doesn, then return its length.
+//
+// IETF RFC-8141 defines an NID (Namespace Identifier) as follows:
+//
+//	NID = (alphanum) 0*30(ldh) (alphanum)
+//
+//	ldh = alphanum / "-"
+func PeekPrefixNID(str string) (n int, found bool) {
+
+	if "" == str {
+		return 0, false
+	}
+
+	const max int = 32
+
+	var index int
+	var r rune
+	var prev rune
+
+	const colon rune = ':'
+	const lenColon int = len(string(colon))
+
+	for index, r = range str {
+		switch {
+		case 0 == index:
+			if !IsAlphaNum(r) {
+				return 0, false
+			}
+			n += utf8.RuneLength(r)
+			prev = r
+		case colon == r:
+			if 32 < index {
+				return 0, false
+			}
+			if !IsAlphaNum(prev) {
+				return 0, false
+			}
+			return n, true
+		default:
+			if !IsAlphaNum(r) && '-' != r {
+				return 0, false
+			}
+			n += utf8.RuneLength(r)
+			prev = r
+		}
+	}
+
+	return 0, false
+}
+
 // NormalizeNID returns the normalized form of an NID (Namespace Identifier).
 //
 // From IETF RFC-8141:
@@ -19,7 +70,7 @@ func NormalizeNID(nid string) string {
 		if 'A' <= r && r <= 'Z' {
 			r = r + ('a' - 'A')
 		}
-			p = append(p, string(r)...)
+		p = append(p, string(r)...)
 	}
 
 	return string(p)

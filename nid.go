@@ -40,7 +40,7 @@ func PeekPrefixNID(str string) (n int, found bool) {
 			if index < min {
 				return 0, false
 			}
-			if 32 < index {
+			if max < index {
 				return 0, false
 			}
 			if !IsAlphaNum(prev) {

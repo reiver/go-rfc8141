@@ -108,10 +108,6 @@ func TestPeekPrefixNID(t *testing.T) {
 
 
 		{
-			URN:     "urn:0:Example",
-			ExpectedNID: "0",
-		},
-		{
 			URN:     "urn:01:Example",
 			ExpectedNID: "01",
 		},
@@ -407,6 +403,15 @@ func TestPeekPrefixNID_fail(t *testing.T) {
 	}{
 		{
 			URN: "urn::something",
+		},
+
+
+
+		{
+			URN: "urn:0:something",
+		},
+		{
+			URN: "urn:a:something",
 		},
 
 

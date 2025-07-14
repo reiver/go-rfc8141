@@ -18,6 +18,7 @@ func PeekPrefixNID(str string) (n int, found bool) {
 		return 0, false
 	}
 
+	const min int = 2
 	const max int = 32
 
 	var index int
@@ -36,6 +37,9 @@ func PeekPrefixNID(str string) (n int, found bool) {
 			n += utf8.RuneLength(r)
 			prev = r
 		case colon == r:
+			if index < min {
+				return 0, false
+			}
 			if 32 < index {
 				return 0, false
 			}

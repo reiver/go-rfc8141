@@ -406,6 +406,12 @@ func TestPeekPrefixNID_fail(t *testing.T) {
 		URN string
 	}{
 		{
+			URN: "urn::something",
+		},
+
+
+
+		{
 			URN: "urn:-:something",
 		},
 

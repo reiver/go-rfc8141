@@ -4,7 +4,7 @@ github.com/reiver/go-erorr v0.0.0-20240801233437-8cbde6d1fa3f h1:D1QSxKHm8U73Xhj
 github.com/reiver/go-erorr v0.0.0-20240801233437-8cbde6d1fa3f/go.mod h1:F0HbBf+Ak2ZlE8YkDW4Y+KxaUmT0KaaIJK6CXY3cJxE=
 github.com/reiver/go-rfc2234 v0.0.0-20240824134608-874192441e79 h1:DRNqoxS6b5TLHKjX5hE6PSL2b0GqlMiw5Vh4ct7oIYs=
 github.com/reiver/go-rfc2234 v0.0.0-20240824134608-874192441e79/go.mod h1:ukK719h1pqMMWmCcBwHnBCcY2lRYnnBpWljt3Ek4QDs=
-github.com/reiver/go-rfc3986 v0.0.0-20250715183403-fa6d69e21408 h1:jqqS1/MCkk2d754hWbJuWVrXPpJfcFIZ20mwbY/UoRU=
-github.com/reiver/go-rfc3986 v0.0.0-20250715183403-fa6d69e21408/go.mod h1:1s1+oVUwlf9YR6OBviKPzdu7u8teovIQA84fn2gM4/s=
+github.com/reiver/go-rfc3986 v0.0.0-20250715210429-fb2d5b78e44d h1:PqUUSx1GB5m16w96AI4C29Rz4n4vXk4N+Dr45Hqs1UM=
+github.com/reiver/go-rfc3986 v0.0.0-20250715210429-fb2d5b78e44d/go.mod h1:1s1+oVUwlf9YR6OBviKPzdu7u8teovIQA84fn2gM4/s=
 github.com/reiver/go-utf8 v2.0.2-0.20240825112455-f6c2bd439d4f+incompatible h1:UnOzxDADv3uDI9QB8xh3ZAAmnaWyp7NlV2ny7K8FlG0=
 github.com/reiver/go-utf8 v2.0.2-0.20240825112455-f6c2bd439d4f+incompatible/go.mod h1:tfGntNDUeEZIAsz0mTu0lF7/IlErc+BpQgO6yxYmJig=

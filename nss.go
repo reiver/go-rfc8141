@@ -1,9 +1,5 @@
 package rfc8141
 
-import (
-	"github.com/reiver/go-rfc3986"
-)
-
 // PeekPrefixNSS looks to see if `str` begins with an NSS (Namespace Specific String),
 // and if it does, then returns the decoded NSS (Namespace Specific String) its original (encoded) length.
 //
@@ -22,7 +18,7 @@ func PeekPrefixNSS(str string) (nss string, n int, found bool) {
 	var s string = str
 
 	{
-		b, length, found := rfc3986.PeekPrefixPChar(s)
+		b, length, found := PeekPrefixPChar(s)
 		if !found {
 			return "", 0, false
 		}
@@ -44,7 +40,7 @@ func PeekPrefixNSS(str string) (nss string, n int, found bool) {
 			s = s[length:]
 			continue loop
 		default:
-			b, length, found := rfc3986.PeekPrefixPChar(s)
+			b, length, found := PeekPrefixPChar(s)
 			if !found {
 				break loop
 			}

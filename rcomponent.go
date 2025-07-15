@@ -2,8 +2,6 @@ package rfc8141
 
 import (
 	"strings"
-
-	"github.com/reiver/go-rfc3986"
 )
 
 // PeekPrefixRComponent looks to see if `str` begins with an r-component (without the "?+" prefix),
@@ -36,7 +34,7 @@ func PeekPrefixRComponent(str string) (rcomponent string, n int, found bool) {
 	var p []byte = buffer[0:0]
 
 	{
-		b, length, found := rfc3986.PeekPrefixPChar(s)
+		b, length, found := PeekPrefixPChar(s)
 		if !found {
 			return "", 0, false
 		}
@@ -69,7 +67,7 @@ func PeekPrefixRComponent(str string) (rcomponent string, n int, found bool) {
 			s = s[length:]
 			continue loop
 		default:
-			b, length, found := rfc3986.PeekPrefixPChar(s)
+			b, length, found := PeekPrefixPChar(s)
 			if !found {
 				break loop
 			}
